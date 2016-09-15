@@ -12,7 +12,6 @@ router.get('/', function(req, res, next) {
     request('http://api.openweathermap.org/data/2.5/weather?q=' + beacharr[0] + ',AU&APPID=2f3cfb6662fc99d71dd7424de69f6d39&callback=', function(error, response, body){
         if(!error && response.statusCode == 200){
             weathers = JSON.parse(body);
-            console.log(weathers)
             res.render('weather', {
                 title: 'Sun of a Beach',
                 selectedbeach: beacharr,
