@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1><%= title %></h1>
+<p>Welcome to the <%= title %> beach finder!</p>
+<h2>Select a beach:</h2>
+<form action="/weather" method="get">
+    <select name="beach">
+        <% beaches.locations.forEach(function(item) { %>
+        <option value="<%= item.name + '$' + item.latitude + '$' + item.longitude %>"><%= item.name %></option>
+        <% }) %>
+    </select>
+    <br><br>
+    <input type="submit" value="Check Weather!">
+</form>
+<p class="footer">Powered by <a href="http://swellcast.com.au/">Swellcast</a>, <a href="http://openweathermap.org/">OpenWeatherMap</a>, and <a href="www.google.com/maps">GoogleMaps</a> APIs.</p>
+</body>
+</html>

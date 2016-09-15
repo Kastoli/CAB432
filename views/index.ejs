@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to the <%= title %> beach finder!</p>
+    <h2>Select your state:</h2>
+    <form action="/beaches" method="get">
+      <select name="state">
+        <% states.forEach(function(item) { %>
+          <option value="<%= item.id %>"><%= item.name %></option>
+        <% }) %>
+      </select>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  <p class="footer">Powered by <a href="http://swellcast.com.au/">Swellcast</a>, <a href="http://openweathermap.org/">OpenWeatherMap</a>, and <a href="www.google.com/maps">GoogleMaps</a> APIs.</p>
+  </body>
+</html>
